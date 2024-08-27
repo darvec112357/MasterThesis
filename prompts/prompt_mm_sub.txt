@@ -1,0 +1,111 @@
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+Instruction:
+Solve the given math problem by decomposing it into smaller, manageable sub-questions. Put your final answer after 'Final answer: '.
+
+Input:
+Raul had $87 to spare so he decided to go to the bookshop. Raul bought 8 comics, each of which cost $4. How much money does Raul have left?
+
+Response:
+Sub-question 1: How much did Raul spend on comics?
+Answer to Sub-question 1: $4 x 8 = $32
+Sub-question 2: How much does Raul have left?
+Answer to Sub-question 2: $87 - $32 = $55
+Final Answer: 55<eos>
+
+Input:
+My 2 cats had 3 female kittens and 2 male kittens. How many cats do I have in total?
+
+Response:
+Sub-question 1: How many kittens do I have?
+Answer to Sub-question 1: 2 + 3 = 5
+Sub-question 2: How many cats do I have in total?
+Answer to Sub-question 2: 5 + 2 = 7
+Final Answer: 7<eos>
+
+Input:
+Dave breaks 2 guitar strings per night when playing live.  If he performs 6 shows a week for 12 weeks, how many guitar strings will he need to replace?
+
+Response:
+Sub-question 1: How many strings does Dave break each week?
+Answer to Sub-question 1: 2 * 6 = 12
+Sub-question 2: How many strings does Dave break in 12 weeks?
+Answer to Sub-question 2: 12 * 12 = 144
+Final Answer: 144<eos>
+
+Input:
+If there are initially 5 bananas on the fruit display and the number of oranges is twice the number of bananas, and the number of apples is twice the number of oranges, what is the total number of fruits on the display?
+
+Response:
+Sub-question 1: How many oranges are there?
+Answer to Sub-question 1: 5 x 2 = 10
+Sub-question 2: How many apples are there?
+Answer to Sub-question 2: 10 x 2 = 20
+Sub-question 3: What is the total number of fruits?
+Answer to Sub-question 3: 5 + 10 + 20 = 35
+Final Answer: 35<eos>
+
+Input:
+If a community is constructing a metal fence consisting of 10 fence panels, where each panel is composed of 3 metal sheets and 2 metal beams, and each sheet requires 10 metal rods while each beam requires 4 metal rods, how many metal rods does the community need in total for the entire fence?
+
+Response:
+Sub-question 1: How many metal sheets are needed?
+Answer to Sub-question 1: 10 * 3 = 30
+Sub-question 2: How many metal beams are needed?
+Answer to Sub-question 2: 10 * 2 = 20
+Sub-question 3: How many rods are needed for the sheets?
+Answer to Sub-question 3: 30 * 10 = 300
+Sub-question 4: How many rods are needed for the beams?
+Answer to Sub-question 4: 20 * 4 = 80
+Sub-question 5: How many rods are needed in total?
+Answer to Sub-question 5: 300 + 80 = 380
+Final Answer: 380<eos>
+
+Input:
+Three years ago, Rosie purchased an art piece for $4000. The same art piece will be x times as much in another three years. How much money will the art piece have increased by?
+If we know the answer to the above question is 8000, what is the value of unknown variable x?
+
+Response:
+Sub-question 1: How much will the art piece be in three years?
+Answer to Sub-question 1: 4000x
+Sub-question 2: What is the increase in value of the art piece?
+Answer to Sub-question 2: 4000x - 4000
+Sub-question 3: Can you form an equation with x?
+Answer to Sub-question 3: 4000x - 4000 = 8000
+Sub-question 4: What is the value of x?
+Answer to Sub-question 4: 3
+Final Answer: 3<eos>
+
+Input:
+Patricia is making a highlight film about her basketball team. She recorded video of every player and plans to put it all together in a longer movie. She has 130 seconds of the point guard, 145 seconds of the shooting guard, 85 seconds of the small forward, x seconds of the power forward, and 180 seconds of the center. How on average, how many minutes does each player get?
+If we know the answer to the above question is 2, what is the value of unknown variable x?
+
+Response:
+Sub-question 1: What is the total duration of the video in seconds?
+Answer to Sub-question 1: 130 + 145 + 85 + x + 180 = 540 + x
+Sub-question 2: What is the average duration of the video in seconds?
+Answer to Sub-question 2: (130 + 145 + 85 + x + 180) / 5 = (540 + x) / 5
+Sub-question 3: How many seconds is 2 minutes equal to?
+Answer to Sub-question 3: 2 * 60 = 120
+Sub-question 4: Can you form an equation with x?
+Answer to Sub-question 4: (540 + x) / 5 = 120
+Sub-question 5: What is the value of x?
+Answer to Sub-question 5: 60
+Final Answer: 60<eos>
+
+Input:
+Linda is building a new hotel with two wings. The first wing has 9 floors and each floor has 6 halls each with 32 rooms. The second wing has 7 floors each with x halls with 40 rooms each. How many rooms are in the hotel total?
+If we know the answer to the above question is 4248, what is the value of unknown variable x?
+
+Response:
+Sub-question 1: How many rooms are there in the first wing?
+Answer to Sub-question 1: 9 * 6 * 32 = 1728
+Sub-question 2: How many rooms are there in the second wing?
+Answer to Sub-question 2: 7 * x * 40 = 280x
+Sub-question 3: How many rooms are there in the hotel?
+Answer to Sub-question 3: 1728 + 280x
+Sub-question 4: Can you form an equation with x?
+Answer to Sub-question 4: 1728 + 280x = 4248
+Sub-question 5: What is the value of x?
+Answer to Sub-question 5: 9
+Final Answer: 9<eos>

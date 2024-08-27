@@ -1,0 +1,107 @@
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+Instruction:
+Solve the given math problem by writing a python program. Store your result as a variable named 'answer'.
+
+Input:
+Raul had $87 to spare so he decided to go to the bookshop. Raul bought 8 comics, each of which cost $4. How much money does Raul have left?
+
+Response:
+initial_amount = 87
+num_comics = 8
+cost_per_comic = 4
+total_cost = num_comics * cost_per_comic
+amount_left = initial_amount - total_cost
+answer = amount_left <eos>
+
+Input:
+My 2 cats had 3 female kittens and 2 male kittens. How many cats do I have in total?
+
+Response:
+adult_cats = 2
+female_kittens = 3
+male_kittens = 2
+total_cats = adult_cats + female_kittens + male_kittens
+answer = total_cats <eos>
+
+Input:
+Dave breaks 2 guitar strings per night when playing live.  If he performs 6 shows a week for 12 weeks, how many guitar strings will he need to replace?
+
+Response:
+strings_per_night = 2
+shows_per_week = 6
+weeks = 12
+total_strings_broken = strings_per_night * shows_per_week * weeks
+answer = total_strings_broken <eos>
+
+Input:
+If there are initially 5 bananas on the fruit display and the number of oranges is twice the number of bananas, and the number of apples is twice the number of oranges, what is the total number of fruits on the display?
+
+Response:
+bananas = 5
+oranges = 2 * bananas
+apples = 2 * oranges
+total_fruits = bananas + oranges + apples
+answer = total_fruits <eos>
+
+Input:
+If a community is constructing a metal fence consisting of 10 fence panels, where each panel is composed of 3 metal sheets and 2 metal beams, and each sheet requires 10 metal rods while each beam requires 4 metal rods, how many metal rods does the community need in total for the entire fence?
+
+Response:
+fence_panels = 10
+sheets_per_panel = 3
+beams_per_panel = 2
+rods_per_sheet = 10
+rods_per_beam = 4
+rods_per_panel = (sheets_per_panel * rods_per_sheet) + (beams_per_panel * rods_per_beam)
+total_rods = fence_panels * rods_per_panel
+answer = total_rods <eos>
+
+Input:
+Three years ago, Rosie purchased an art piece for $4000. The same art piece will be x times as much in another three years. How much money will the art piece have increased by?
+If we know the answer to the above question is 8000, what is the value of unknown variable x?
+
+Response:
+x = Symbol('x')
+initial_price = 4000
+price_after_three_years = 4000 * x
+increased_amount = 8000
+equation = Eq(price_after_three_years, initial_price + increased_amount)
+solution = solve_it(equation, x)
+answer = solution[x] <eos>
+
+Input:
+Patricia is making a highlight film about her basketball team. She recorded video of every player and plans to put it all together in a longer movie. She has 130 seconds of the point guard, 145 seconds of the shooting guard, 85 seconds of the small forward, x seconds of the power forward, and 180 seconds of the center. How on average, how many minutes does each player get?
+If we know the answer to the above question is 2, what is the value of unknown variable x?
+
+Response:
+x = Symbol('x')
+seconds_point_guard = 130
+seconds_shooting_guard = 145
+seconds_small_forward = 85
+seconds_center = 180
+average_minutes_per_player = 2
+total_seconds = seconds_point_guard + seconds_shooting_guard + seconds_small_forward + x + seconds_center
+total_minutes = total_seconds / 60
+equation = Eq(total_minutes / 5, average_minutes_per_player)
+solution = solve_it(equation, x)
+answer = solution[x] <eos>
+
+Input:
+Linda is building a new hotel with two wings. The first wing has 9 floors and each floor has 6 halls each with 32 rooms. The second wing has 7 floors each with x halls with 40 rooms each. How many rooms are in the hotel total?
+If we know the answer to the above question is 4248, what is the value of unknown variable x?
+
+Response:
+x = Symbol('x')
+rooms_per_hall_first_wing = 32
+rooms_per_hall_second_wing = 40
+halls_per_floor_first_wing = 6
+halls_per_floor_second_wing = x
+floors_first_wing = 9
+floors_second_wing = 7
+rooms_first_wing = floors_first_wing * halls_per_floor_first_wing * rooms_per_hall_first_wing
+rooms_second_wing = floors_second_wing * halls_per_floor_second_wing * rooms_per_hall_second_wing
+total_rooms = rooms_first_wing + rooms_second_wing
+equation = Eq(total_rooms, 4248)
+solution = solve_it(equation, x)
+answer = solution[x] <eos>

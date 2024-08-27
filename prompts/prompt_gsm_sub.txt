@@ -1,0 +1,116 @@
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+Instruction:
+Solve the given math problem by decomposing it into smaller, manageable sub-questions. Put your final answer after 'Final answer: '.
+
+Input:
+John buys 3 dress shirts.  They sell for $20 each.  He also has to pay 10% tax on everything.  How much did he pay in total?
+
+Response:
+Sub-question 1: How much did John spend on shirts?
+Answer to Sub-question 1: 3*$20=$<<3*20=60>>60
+Sub-question 2: How much did John spend on tax?
+Answer to Sub-question 2: $60*.1=$<<60*.1=6>>6
+Sub-question 3: How much did John spend in total?
+Answer to Sub-question 3: $60+$6=$<<60+6=66>>66
+Final Answer: 66<eos>
+
+Input:
+Arwen and Elrond picked some flowers. Arwen was able to get 20 tulips and Elrond was able to get twice as many tulips as Arwen did. How many tulips were they able to get in total?
+
+Response:
+Sub-question 1: How many tulips did Elrond get?
+Answer to Sub-question 1: 20 x 2 = <<20*2=40>>40
+Sub-question 2: How many tulips did they get in total?
+Answer to Sub-question 2: 40 + 20 = <<40+20=60>>60
+Final Answer: 60<eos>
+
+Input:
+A group of nine turtles sat on a log.  Two less than three times the original number of turtles climbed onto the log with the original group, creating an even larger group on the log.  Suddenly, half of the large group of turtles were frightened by a sound and jumped off of the log and ran away.  How many turtles remained on the log?
+
+Response:
+Sub-question 1: How many turtles climed onto the log?
+Answer to Sub-question 1: (9*3)-2=<<9*3-2=25>>25
+Sub-question 2: How many turtles were there in total?
+Answer to Sub-question 2: 25+9=<<9+25=34>>34
+Sub-question 3: How many turtles were there left after half of them went away?
+Answer to Sub-question 3: 34/2=<<34/2=17>>17
+Final Answer: 17<eos>
+
+Input:
+James hurt himself exercising.  The pain subsided after 3 days, but he knew that the injury would take at least 5 times that long to fully heal. After that, he wanted to wait another 3 days before he started working out again.  If he wants to wait 3 weeks after that to start lifting heavy again, how long until he can lift heavy again?
+
+Response:
+Sub-question 1: How many days does it take for the injury to be fully healed?
+Answer to Sub-question 1: 3*5=<<3*5=15>>15
+Sub-question 2: How many days does it take for James to start exercising again?
+Answer to Sub-question 2: 15+3=<<15+3=18>>18
+Sub-question 3: How many days would James wait to start lifting heavy again?
+Answer to Sub-question 3: 3*7=<<3*7=21>>21
+Sub-question 4: How many days would James wait in total?
+Answer to Sub-question 4: 18+21=<<18+21=39>>39
+Final Answer: 39<eos>
+
+Input:
+I caught 4 fewer fish than the number in my tank and added them to my fish tank. If the tank has 20 fish right now, how many did I add?
+
+Response:
+Sub-question 1: If the number of fish that was in the tank before is x, what is the number of fish added to the tank?
+Answer to Sub-question 1: x-4
+Sub-question 2: What is the total number of fish in the tank now?
+Answer to Sub-question 2: x+x-4
+Sub-question 3: Can you form an equation with x?
+Answer to Sub-question 3: x+x-4=20
+Sub-question 4: What is the value of x?
+Answer to Sub-question 4: 12
+Sub-question 5: How many fish were added?
+Answer to Sub-question 5: 12-4=<<12-4=8>>8
+Final Answer: 8<eos>
+
+Input:
+Gary is buying chlorine for his rectangular pool, which is 10 feet long, 8 feet wide, and 6 feet deep. Gary needs to buy one quart of chlorine for every 120 cubic feet of water in his pool. If chlorine costs $3 a quart, how much does Gary spend on chlorine?
+
+Response:
+Sub-question 1: What is the volume of the pool?
+Answer to Sub-question 1: 10 ft * 8 ft * 6 ft = <<10*8*6=480>>480 cubic feet
+Sub-question 2: How many quarts of chlorine does Gary need to buy?
+Answer to Sub-question 2: 480 cubic feet / 120 cubic feet/quart = <<480/120=4>>4
+Sub-question 3: How much does Gary spend on chlorine?
+Answer to Sub-question 3: $3/quart * 4 quarts = $<<3*4=12>>12
+Final Answer: 12<eos>
+
+Input:
+The number of Oreos and cookies in a box is in the ratio 4:9. Zane bought each Oreo at $2 and each cookie at $3. How much more money did Zane spend on buying the cookies than buying the Oreos if the total number of items in the box is 65?
+
+Response:
+Sub-question 1: What is the total ratio representing the number of cookies and Oreos that Zane bought?
+Answer to Sub-question 1: 4+9=<<4+9=13>>13
+Sub-question 2: What is the fraction representing the number Oreos Zane bought?
+Answer to Sub-question 2: 4/13
+Sub-question 3: How many Oreos did Zane bought?
+Answer to Sub-question 3: 4/13*65=<<4/13*65=20>>20
+Sub-question 4: What is the total cost of buying Oreos?
+Answer to Sub-question 4: $2*20=$<<20*2=40>>40
+Sub-question 5: How many cookies did Zane bought?
+Answer to Sub-question 5: 65-20=<<65-20=45>>45
+Sub-question 6: What is the total cost of buying Oreos?
+Answer to Sub-question 6: 45*$3=$<<45*3=135>>135
+Sub-question 7: How much more money did Zane spend on buying the cookies than buying the Oreos?
+Answer to Sub-question 7: $135-$40=$95
+Final Answer: 95<eos>
+
+Input:
+Linda is building a new hotel with two wings. The first wing has 9 floors and each floor has 6 halls each with 32 rooms. The second wing has 7 floors each with 9 halls with 40 rooms each. How many rooms are in the hotel total?
+
+Response:
+Sub-question 1: How many rooms are there in one floor in the first wing?
+Answer to Sub-question 1: 32 rooms/hall * 6 halls/floor = <<32*6=192>>192
+Sub-question 2: How many rooms are there in the first wing?
+Answer to Sub-question 2: 192 rooms/floor * 9 floors = <<192*9=1728>>1728
+Sub-question 3: How many rooms are there in one floor in the second wing?
+Answer to Sub-question 3: 40 rooms/hall * 9 halls/floor = <<40*9=360>>360
+Sub-question 4: How many rooms are there in the second wing?
+Answer to Sub-question 4: 360 rooms/floor * 7 floors = <<360*7=2520>>2520
+Sub-question 5: How many rooms are in the hotel?
+Answer to Sub-question 5: 1728 rooms + 2520 rooms = <<1728+2520=4248>>4248
+Final Answer: 4248<eos>

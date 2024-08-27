@@ -1,0 +1,86 @@
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+Instruction:
+Solve the given math problem step by step. Put your final answer after 'Final answer: '.
+
+Input:
+John buys 3 dress shirts.  They sell for $20 each.  He also has to pay 10% tax on everything.  How much did he pay in total?
+
+Response:
+The shirts cost 3*$20=$<<3*20=60>>60 before tax
+The tax cost $60*.1=$<<60*.1=6>>6
+So in total they paid $60+$6=$<<60+6=66>>66
+Final Answer: 66<eos>
+
+Input:
+Arwen and Elrond picked some flowers. Arwen was able to get 20 tulips and Elrond was able to get twice as many tulips as Arwen did. How many tulips were they able to get in total?
+
+Response:
+Elrond was able to get 20 x 2 = <<20*2=40>>40 tulips.
+Therefore, the total number of tulips they were able to get is 40 + 20 = <<40+20=60>>60.
+Final Answer: 60<eos>
+
+Input:
+A group of nine turtles sat on a log.  Two less than three times the original number of turtles climbed onto the log with the original group, creating an even larger group on the log.  Suddenly, half of the large group of turtles were frightened by a sound and jumped off of the log and ran away.  How many turtles remained on the log?
+
+Response:
+Two less than three times the original number of turtles is (9*3)-2=<<9*3-2=25>>25.
+Thus, The original 9 were joined by 25 more, for a total of 25+9=<<9+25=34>>34 turtles.
+But half of the 34 turtles scurried away, leaving half remaining, or 34/2=<<34/2=17>>17 brave turtles
+Final Answer: 17<eos>
+
+Input:
+James hurt himself exercising.  The pain subsided after 3 days, but he knew that the injury would take at least 5 times that long to fully heal. After that, he wanted to wait another 3 days before he started working out again.  If he wants to wait 3 weeks after that to start lifting heavy again, how long until he can lift heavy again?
+
+Response:
+The injury would be fully healed after 3*5=<<3*5=15>>15 days
+So he would start exercising again in 15+3=<<15+3=18>>18 days
+He would then wait for 3*7=<<3*7=21>>21 more days to start lifting heavy again
+That means he needs to wait 18+21=<<18+21=39>>39 days
+Final Answer: 39<eos>
+
+Input:
+I caught 4 fewer fish than the number in my tank and added them to my fish tank. If the tank has 20 fish right now, how many did I add?
+
+Response:
+Let's say the number of fish that was in the tank before was x
+If you caught 4 fewer fish than the number that was there, then you caught x-4
+After adding x-4 fish into the tank, the tank now had 20 fish, meaning the total number of fish in the tank is x+x-4=20
+2x=20+4
+The total number of fish that was initially in the tank is 2x=24
+Initially, there were x=24/2 fish in the tank
+x=<<12=12>>12
+If you caught 4 fewer fish than the number in my tank initially, you caught 12-4=<<12-4=8>>8 fish.
+Final Answer: 8<eos>
+
+Input:
+Gary is buying chlorine for his rectangular pool, which is 10 feet long, 8 feet wide, and 6 feet deep. Gary needs to buy one quart of chlorine for every 120 cubic feet of water in his pool. If chlorine costs $3 a quart, how much does Gary spend on chlorine?
+
+Response:
+First find the volume of the pool by multiplying the length by the width by the height: 10 ft * 8 ft * 6 ft = <<10*8*6=480>>480 cubic feet
+Then divide the volume of the pool by the number of cubic feet one quart of chlorine can sterilize: 480 cubic feet / 120 cubic feet/quart = <<480/120=4>>4 quarts
+Then multiply the number of quarts Gary needs to buy by the price per quart to find out how much money he spends: $3/quart * 4 quarts = $<<3*4=12>>12
+Final Answer: 12<eos>
+
+Input:
+The number of Oreos and cookies in a box is in the ratio 4:9. Zane bought each Oreo at $2 and each cookie at $3. How much more money did Zane spend on buying the cookies than buying the Oreos if the total number of items in the box is 65?
+
+Response:
+The total ratio representing the number of cookies and Oreos that Zane bought is 4+9=<<4+9=13>>13
+The fraction representing the number of Oreos Zane bought is 4/13, and since the total number of items in the box is 65, Zane bought 4/13*65=<<4/13*65=20>>20 Oreos.
+If Zane bought 20 Oreos at $2 each, the total cost of buying Oreos is $2*20=$<<20*2=40>>40
+Since the total number of items in the box is 65, and there are 20 Oreos in the box, the number of cookies in the box is 65-20=<<65-20=45>>45
+The cost of buying the cookies at $3 each is 45*$3=$<<45*3=135>>135
+If the Oreos cost $40 to buy, Zane used $135-$40=$95 more to buy Cookies than Oreos.
+Final Answer: 95<eos>
+
+Input:
+Linda is building a new hotel with two wings. The first wing has 9 floors and each floor has 6 halls each with 32 rooms. The second wing has 7 floors each with 9 halls with 40 rooms each. How many rooms are in the hotel total?
+
+Response:
+First find the number of rooms per floor in the first wing: 32 rooms/hall * 6 halls/floor = <<32*6=192>>192 rooms/floor
+Then find the total number of rooms in the first wing by multiplying that number by the number of floors: 192 rooms/floor * 9 floors = <<192*9=1728>>1728 rooms
+Then find the number of rooms per floor in the second wing: 40 rooms/hall * 9 halls/floor = <<40*9=360>>360 rooms/floor
+Then find the total number of rooms in the second wing by multiplying that number by the number of floors: 360 rooms/floor * 7 floors = <<360*7=2520>>2520 rooms
+Then add the total number of rooms in each wing to find the overall total: 1728 rooms + 2520 rooms = <<1728+2520=4248>>4248 rooms
+Final Answer: 4248<eos>
