@@ -10,7 +10,16 @@ import xml.etree.ElementTree as ET
 login(token='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')
 
 guide_prompt = """"""
-
+model_name = sys.argv[1]
+OUTPUT_DIR = sys.argv[2]
+strategy = sys.argv[3]
+part = int(sys.argv[4])
+model_map = {'llama':'unsloth/llama-3-8b-Instruct',
+            'gemma7':'unsloth/gemma-7b-it',
+            'gemma9':'unsloth/gemma-2-9b-it',
+            'qwen':'unsloth/Qwen2-7B-Instruct',
+            'mistral':'unsloth/mistral-7b-instruct-v0.3'}
+llm = LLM(model=model_map[model_name],max_model_len=2880)
 def remove_duplicates(dataset):
     questions = dataset['question']
     answers = dataset['answer']
@@ -42,7 +51,7 @@ def infer(data,strategy,model_name,path,part):
         # dataset = [x for x in dataset if x['type'][:3] == 'GSM']
         with open('/cluster/project/sachan/liuron/Thesis/experiments/inference/mm.json','r') as json_file:
             dataset = json.load(json_file)
-        batch_size = len(dataset['answer']) // 4
+        batch_size = len(dataset['answer']) // 5
         questions = dataset['question'][(part-1)*batch_size:part*batch_size]
         official_answer = [extract_pred(x) for x in dataset['answer'][(part-1)*batch_size:part*batch_size]]
     if data == 'svamp':
@@ -84,15 +93,10 @@ def infer(data,strategy,model_name,path,part):
         file_name = f'/cluster/project/sachan/liuron/Thesis/experiments/inference/{path}/{model_name}-{data}-{strategy}.csv'
     df.to_csv(file_name,index=False)
 
-if __name__ == "__main__":
-    model_name = sys.argv[1]
-    OUTPUT_DIR = sys.argv[2]
-    strategy = sys.argv[3]
-    part = int(sys.argv[4])
-    model_map = {'llama':'unsloth/llama-3-8b-Instruct',
-             'gemma7':'unsloth/gemma-7b-it'}
-    llm = LLM(model=model_map[model_name],max_model_len=4096)
-    for data in ['svamp','asdiv']: #'mm' for MetaMathQA,'gsm-test'/'gsm-train' for test/train sets of gsm8k
-        # for strategy in ['sub']: #'sub' for sub-questioning, 'cot' for chain of thought. Do separate runs for 'sub' and 'cot' when 'mm' is used
-        print(f'Running {data}-{strategy}, part {part} with {model_name}')
-        infer(data,strategy,model_name,OUTPUT_DIR,part)
+# for data in ['mm']:
+for data in ['gsm-train','gsm-test','svmap','asdiv']:
+    print(f'Running {data}-{strategy}, part {part} with {model_name}')
+    infer(data,strategy,model_name,OUTPUT_DIR,part)
+
+
+    

@@ -6,17 +6,10 @@ import random
 import numpy as np
 from collections import Counter
 
-
+dataset = sys.argv[1]
 llm = LLM(model='/cluster/project/sachan/liuron/Thesis/experiments/rl/epoch1/records/2024-08-29_15-40-02/llama/checkpoint-19460/xxx')
-# sampling_params = SamplingParams(n=num_samples,temperature=0.1,stop=['<eos>'],max_tokens=512)
-# df_test = pd.read_csv('../../inference/results/llama/results-all-test.csv')
-# strategy_correct_map = {
-#     'Chain of Thought': df_test['cot-correct'],
-#     'Sub-questioning': df_test['sub-correct'],
-#     'Program of Thought': df_test['pot-correct'],
-#     'Unsolvable': ~df_test['correct']
-# }
-with open(f'/cluster/project/sachan/liuron/Thesis/experiments/rl/epoch2/data/test_gsm.json', 'r') as json_file:
+sampling_params = SamplingParams(temperature=0.1,stop=['<eos>'],max_tokens=512)
+with open(f'/cluster/project/sachan/liuron/Thesis/experiments/rl/epoch2/data/test_{dataset}.json', 'r') as json_file:
     dataset = json.load(json_file)
 take = len(dataset['text'])
 # take=1319
@@ -69,20 +62,12 @@ frequencies = Counter(strategies_step1)
 for element, freq in frequencies.items():
     print(f"Element {element} appears {freq} times, with accuracy {accuracy_dict[element]/freq}.")
 # print(second_step_questions[0])
-predictions = llm.generate(second_step_questions,sampling_params=SamplingParams(temperature=temperature,stop=['<eos>'],max_tokens=512))
+predictions = llm.generate(second_step_questions,sampling_params=SamplingParams(temperature=0.1,stop=['<eos>'],max_tokens=512))
 for i in range(len(predictions)):
     response_part = predictions[i].outputs[0].text
     text = predictions[i].prompt + response_part
     strategy = response_part.split(':')[0]
-    # if i == 0:
-    #     print(text)
-    # assert(strategy not in predictions[i].prompt)
-    # if strategy not in predictions[i].prompt:
-    #     print(text)
-    #     exit()
     if strategy not in ['Program of Thought','Chain of Thought','Sub-questioning','Unsolvable']:
-        # print(text)
-        # exit()
         continue
     output_answer = response_part.replace(strategy + ': ','')
     strategies.append(strategy)

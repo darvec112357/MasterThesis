@@ -8,8 +8,10 @@ max_seq_length = 1024 # Choose any! We auto support RoPE Scaling internally!
 dtype = None # None for auto detection. Float16 for Tesla T4, V100, Bfloat16 for Ampere+
 load_in_4bit = False # Use 4bit quantization to reduce memory usage. Can be False.
 model_map = {'llama':'llama-3-8b-Instruct',
-             'gemma7':'gemma-7b-it'}
-MODEL_NAME = "unsloth/" + model_map[sys.argv[1]]
+             'gemma7':'gemma-7b-it',
+             'mistral':'Mistral-7B-v0.3',
+             'qwen':'/cluster/work/sachan/models/Qwen2-7B-Instruct'}
+MODEL_NAME = model_map[sys.argv[1]]
 cut_ratio = float(sys.argv[2])
 OUTPUT_DIR = sys.argv[3]
 
@@ -59,7 +61,7 @@ from trl import SFTTrainer
 from transformers import TrainingArguments
 from unsloth import is_bfloat16_supported
 
-steps = 2000
+steps = 3000
 trainer = SFTTrainer(
     model = model,
     tokenizer = tokenizer,
@@ -72,8 +74,8 @@ trainer = SFTTrainer(
     args = TrainingArguments(
         eval_strategy = "steps",
         eval_steps = steps,
-        per_device_eval_batch_size = 4,
-        per_device_train_batch_size = 4,
+        per_device_eval_batch_size = 2,
+        per_device_train_batch_size = 2,
         gradient_accumulation_steps = 4,
         warmup_steps = 5,
         learning_rate = 2e-4,

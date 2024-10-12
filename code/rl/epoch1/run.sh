@@ -8,4 +8,4 @@ mkdir -p records/$current_time
 cp preprocess.ipynb records/$current_time
 cp train.py records/$current_time
 # cp evaluate.py records/$current_time
-python train.py llama 1 records/$current_time/llama
+python train.py mistral 1 records/$current_time/mistral
